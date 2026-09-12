@@ -176,7 +176,7 @@ Item {
   // Periodic heartbeat to ensure connectivity
   Timer {
     id: heartbeatTimer
-    interval: 2500
+    interval: root.cliampRunning ? 3000 : 1000
     repeat: true
     running: true
     triggeredOnStart: true

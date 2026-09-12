@@ -22,7 +22,9 @@
       "fps": 20,
       "showTrack": true,
       "maxTitleLength": 24,
-      "adaptiveColors": true
+      "adaptiveColors": true,
+      "autoHide": true,
+      "displayMode": 1
     },
     "schema": [
       {
@@ -59,6 +61,13 @@
         "label": "Auto-hide when cliamp is closed",
         "description": "Hide the widget from the bar when cliamp is not running",
         "defaultValue": true
+      },
+      {
+        "key": "displayMode",
+        "type": "number",
+        "label": "Display Mode (1: Both, 2: Vis only, 3: Playback only)",
+        "description": "Initial display mode: 1 for Playback + Visualizer, 2 for Visualizer only, 3 for Playback only",
+        "defaultValue": 1
       }
     ]
   }

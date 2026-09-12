@@ -29,9 +29,13 @@ Widget ini secara dinamis mengadaptasi tampilan visualisasinya mengikuti **31 vi
   - **Klik Kiri**: Toggle Play / Pause (`cliamp toggle`). Jika cliamp belum berjalan, membuka jendela cliamp.
   - **Klik Kanan**: Berganti ke visualizer berikutnya (`cliamp vis next`), tersinkron otomatis ke TUI cliamp.
   - **Klik Tengah**: Lagu berikutnya / Next track (`cliamp next`).
-  - **Scroll Wheel**: Mengatur volume naik/turun (`cliamp volume +/-2`).
+  - **Scroll Wheel**: Berganti mode tampilan (1: Playback + Visualizer, 2: Visualizer only, 3: Playback only).
+- **3 Mode Tampilan (Display Modes)**:
+  1. **Playback + Visualizer**: Menampilkan ikon status, judul lagu, dan visualizer spectrum.
+  2. **Visualizer Only**: Hanya menampilkan visualizer spectrum.
+  3. **Playback Only**: Hanya menampilkan status dan judul lagu.
 - **Hemat Sumber Daya (Smart Idle)**:
-  Stream audio otomatis dijeda saat musik tidak berputar atau cliamp ditutup.
+  Stream audio otomatis dijeda saat musik tidak berputar atau cliamp ditutup, dan widget otomatis tersembunyi total (0 px).
 
 ---
 
@@ -75,6 +79,7 @@ Kamu dapat mengatur opsi widget di dalam blok konfigurasi `shell.json`:
 | `showTrack` | boolean | `true` | Menampilkan potongan judul lagu di sebelah visualizer. |
 | `maxTitleLength` | number | `24` | Batas maksimum karakter judul lagu sebelum dipotong (`…`). |
 | `adaptiveColors` | boolean | `true` | Menggunakan palet warna khusus sesuai visualizer aktif. |
+| `autoHide` | boolean | `true` | Sembunyikan widget secara otomatis saat cliamp ditutup. |
 
 ---
 
