@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "bol.cliamp-bar",
+  "name": "Cliamp Visualizer",
+  "version": "1.0.0",
+  "author": "bol",
+  "license": "MIT",
+  "description": "Real-time spectrum visualizer bar and media controls for cliamp",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Cliamp Visualizer",
+    "description": "Adaptive audio visualizer and controls for cliamp",
+    "category": "Media",
+    "allowMultiple": false,
+    "defaultSection": "center",
+    "defaults": {
+      "fps": 20,
+      "showTrack": true,
+      "maxTitleLength": 24,
+      "adaptiveColors": true
+    },
+    "schema": [
+      {
+        "key": "fps",
+        "type": "number",
+        "label": "Stream FPS (10-30)",
+        "description": "Frame rate for audio spectrum streaming",
+        "defaultValue": 20
+      },
+      {
+        "key": "showTrack",
+        "type": "boolean",
+        "label": "Show Track Title",
+        "description": "Display track title next to the visualizer",
+        "defaultValue": true
+      },
+      {
+        "key": "maxTitleLength",
+        "type": "number",
+        "label": "Max Title Length",
+        "description": "Maximum characters of track title to display before truncating",
+        "defaultValue": 24
+      },
+      {
+        "key": "adaptiveColors",
+        "type": "boolean",
+        "label": "Adaptive Visualizer Colors",
+        "description": "Use visualizer-specific thematic accent colors (e.g. green for Matrix, pink for Sakura)",
+        "defaultValue": true
+      },
+      {
+        "key": "autoHide",
+        "type": "boolean",
+        "label": "Auto-hide when cliamp is closed",
+        "description": "Hide the widget from the bar when cliamp is not running",
+        "defaultValue": true
+      }
+    ]
+  }
+}
