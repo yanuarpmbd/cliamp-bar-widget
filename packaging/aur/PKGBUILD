@@ -1,0 +1,34 @@
+# Maintainer: bol
+pkgname=cliamp-bar-widget-git
+_pkgname=cliamp-bar-widget
+pkgver=1.0.0.r1.g1
+pkgrel=1
+pkgdesc="Real-time spectrum audio visualizer bar and media controls for cliamp in Omarchy"
+arch=('any')
+url="https://github.com/bol/cliamp-bar-widget"
+license=('MIT')
+depends=(
+  'omarchy'
+  'cliamp'
+)
+makedepends=('git')
+provides=('cliamp-bar-widget')
+conflicts=('cliamp-bar-widget')
+source=("$_pkgname::git+file://$PWD")
+sha256sums=('SKIP')
+install=cliamp-bar-widget.install
+
+package() {
+  cd "$_pkgname"
+
+  # Install plugin files into /usr/share/omarchy/shell/plugins/bol.cliamp-bar
+  install -dm755 "$pkgdir/usr/share/omarchy/shell/plugins/bol.cliamp-bar"
+  install -m644 manifest.json "$pkgdir/usr/share/omarchy/shell/plugins/bol.cliamp-bar/"
+  install -m644 BarWidget.qml "$pkgdir/usr/share/omarchy/shell/plugins/bol.cliamp-bar/"
+  install -m644 CliampService.qml "$pkgdir/usr/share/omarchy/shell/plugins/bol.cliamp-bar/"
+  install -m644 VisualizerRenderer.qml "$pkgdir/usr/share/omarchy/shell/plugins/bol.cliamp-bar/"
+
+  # Install documentation
+  install -dm755 "$pkgdir/usr/share/doc/$pkgname"
+  install -m644 README.md "$pkgdir/usr/share/doc/$pkgname/"
+}

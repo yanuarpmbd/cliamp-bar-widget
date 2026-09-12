@@ -58,7 +58,7 @@ BarWidget {
     var vis = cliamp.activeVisualizer
     var modeNames = { 1: "Playback + Visualizer", 2: "Visualizer Only", 3: "Playback Only" }
     var modeName = modeNames[root.displayMode] || "Playback + Visualizer"
-    return track + artist + "\n[" + state.toUpperCase() + "] Mode: " + modeName + " | Vis: " + vis + "\nLeft-click: Play/Pause | Right-click: Next Vis | Scroll: Ubah Tampilan"
+    return track + artist + "\n[" + state.toUpperCase() + "] Mode: " + modeName + " | Vis: " + vis + "\nLeft-click: Play/Pause | Right-click: Next Vis | Scroll: Switch Display Mode"
   }
 
   WidgetButton {

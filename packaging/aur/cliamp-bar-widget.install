@@ -1,0 +1,19 @@
+post_install() {
+  echo "==> Rescanning Omarchy plugins..."
+  if command -v omarchy-shell >/dev/null 2>&1; then
+    omarchy-shell shell rescanPlugins >/dev/null 2>&1 || true
+  fi
+  echo "==> To enable the widget in Omarchy:"
+  echo "    omarchy plugin enable bol.cliamp-bar"
+}
+
+post_upgrade() {
+  post_install
+}
+
+post_remove() {
+  echo "==> Rescanning Omarchy plugins..."
+  if command -v omarchy-shell >/dev/null 2>&1; then
+    omarchy-shell shell rescanPlugins >/dev/null 2>&1 || true
+  fi
+}
