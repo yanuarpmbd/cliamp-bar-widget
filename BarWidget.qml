@@ -11,7 +11,7 @@ BarWidget {
   readonly property int configuredFps: Number(setting("fps", 20))
   readonly property bool showTrack: Boolean(setting("showTrack", true))
   readonly property int maxTitleLength: Number(setting("maxTitleLength", 24))
-  readonly property bool adaptiveColors: Boolean(setting("adaptiveColors", true))
+  readonly property bool adaptiveColors: Boolean(setting("adaptiveColors", false))
   readonly property bool autoHide: Boolean(setting("autoHide", true))
   readonly property int initialDisplayMode: Number(setting("displayMode", 1))
 

@@ -22,7 +22,7 @@
       "fps": 20,
       "showTrack": true,
       "maxTitleLength": 24,
-      "adaptiveColors": true,
+      "adaptiveColors": false,
       "autoHide": true,
       "displayMode": 1
     },
@@ -53,7 +53,7 @@
         "type": "boolean",
         "label": "Adaptive Visualizer Colors",
         "description": "Use visualizer-specific thematic accent colors (e.g. green for Matrix, pink for Sakura)",
-        "defaultValue": true
+        "defaultValue": false
       },
       {
         "key": "autoHide",
