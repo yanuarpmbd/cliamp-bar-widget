@@ -41,22 +41,40 @@ The widget dynamically adapts its visualization graphics to match **all 31 built
 
 ## Installation
 
-Run the installer script:
+### Method 1: Official Omarchy Plugin CLI (Recommended)
+Install directly from the Git repository:
+```bash
+omarchy plugin add https://github.com/yanuarpmbd/cliamp-bar-widget.git --enable
+```
+
+### Method 2: Local Installation Script
+Clone the repository and run the local installer:
 ```bash
 ./install.sh
 ```
 The installer validates the manifest, copies the plugin files directly to `~/.config/omarchy/plugins/bol.cliamp-bar/` (no symlinks), rescans plugins, and enables the widget in Omarchy.
 
-### Uninstallation
-To remove the plugin from Omarchy:
+---
+
+## Configuration & Bar Positioning
+
+Adjust the widget position on the bar:
+```bash
+omarchy bar move bol.cliamp-bar --section center
+```
+Or customize in `~/.config/omarchy/shell.json`.
+
+---
+
+## Uninstallation
+
+Using the official Omarchy CLI:
+```bash
+omarchy plugin remove bol.cliamp-bar
+```
+Or using the local script:
 ```bash
 ./uninstall.sh
-```
-
-### (Optional) Adjust Bar Position
-Open `~/.config/omarchy/shell.json` or run:
-```bash
-omarchy bar move bol.cliamp-bar center 0
 ```
 
 ---

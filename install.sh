@@ -31,6 +31,9 @@ cp "$SCRIPT_DIR/VisualizerRenderer.qml" "$PLUGIN_DEST/"
 if [[ -f "$SCRIPT_DIR/README.md" ]]; then
   cp "$SCRIPT_DIR/README.md" "$PLUGIN_DEST/"
 fi
+if [[ -f "$SCRIPT_DIR/LICENSE" ]]; then
+  cp "$SCRIPT_DIR/LICENSE" "$PLUGIN_DEST/"
+fi
 
 echo "Rescanning & enabling the plugin in the Omarchy shell..."
 omarchy-shell shell rescanPlugins >/dev/null 2>&1 || true

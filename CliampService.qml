@@ -190,4 +190,12 @@ Item {
   Component.onCompleted: {
     pingProcess.running = true
   }
+
+  Component.onDestruction: {
+    heartbeatTimer.running = false
+    restartVisTimer.running = false
+    if (stateProcess.running) stateProcess.running = false
+    if (visProcess.running) visProcess.running = false
+    if (pingProcess.running) pingProcess.running = false
+  }
 }

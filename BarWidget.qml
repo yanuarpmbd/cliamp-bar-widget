@@ -29,6 +29,28 @@ BarWidget {
     fps: root.configuredFps
   }
 
+  function open() {
+    cliamp.openCliampWindow()
+  }
+
+  function close() {
+    // Bar widget with inline visualizer has no separate popup panel
+  }
+
+  IpcHandler {
+    target: "bol.cliamp-bar"
+
+    function toggle(): void { cliamp.togglePlayback() }
+    function next(): void { cliamp.nextTrack() }
+    function prev(): void { cliamp.prevTrack() }
+    function nextVis(): void { cliamp.nextVisualizer() }
+    function setVis(name: string): void { cliamp.setVisualizer(name) }
+    function open(): void { cliamp.openCliampWindow() }
+    function setMode(mode: int): void { root.displayMode = Math.max(1, Math.min(3, mode)) }
+    function cycleMode(): void { root.displayMode = (root.displayMode % 3) + 1 }
+  }
+
+  // Compatibility alias
   IpcHandler {
     target: "cliamp-bar"
 
