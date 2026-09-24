@@ -7,7 +7,7 @@ Item {
   property var bands: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   property string visualizer: "Bars"
   property bool isPlaying: false
-  property bool adaptiveColors: false
+  property bool adaptiveColors: true
   property color defaultColor: Color.accent
 
   implicitWidth: 70
@@ -209,7 +209,7 @@ Item {
             width: 4
             height: 3
             radius: 1
-            color: lit ? (root.adaptiveColors && level === 3 && root.visualizer === "ClassicLED" ? "#ff3333" : (root.adaptiveColors && level === 2 && root.visualizer === "ClassicLED" ? "#ffbb00" : root.activeColor)) : Color.muted
+            color: lit ? (level === 3 && root.visualizer === "ClassicLED" ? "#ff3333" : (level === 2 && root.visualizer === "ClassicLED" ? "#ffbb00" : root.activeColor)) : Color.muted
             opacity: lit ? (root.isPlaying ? 0.95 : 0.3) : 0.15
           }
         }
